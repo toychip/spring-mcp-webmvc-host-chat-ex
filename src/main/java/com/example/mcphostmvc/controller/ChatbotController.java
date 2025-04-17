@@ -18,4 +18,11 @@ public class ChatbotController {
         System.out.println("chatRequest.question = " + chatRequest.question());
         return ResponseEntity.ok(new ChatResponse(chatbotService.chat(chatRequest.question())));
     }
+
+
+    @PostMapping("/getFutureWeather")
+    public ResponseEntity<ChatResponse> getFutureWeather(@RequestBody ChatRequest chatRequest) {
+        System.out.println("getFutureWeather.question = " + chatRequest.question());
+        return ResponseEntity.ok(new ChatResponse(chatbotService.chat(chatRequest.question())));
+    }
 }
